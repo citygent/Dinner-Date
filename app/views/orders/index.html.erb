@@ -1,1 +1,7 @@
 <h1>Your Recently Ordered Meals</h1>
+
+<ul>
+<% @orders.each do |order| %>
+  <li><%= order.dish.name %> at <%= order.restaurant.name %></li>
+<% end %>
+</ul>

@@ -27,15 +27,15 @@ d4 = Dish.create(name: 'Peperoni Pizza', cuisine: 'Italian', description: 'Tomat
 
 d5 = Dish.create(name: 'Whole rainbow trout, fennel, cucumber & dill', cuisine: 'British', description: 'Whole Trout steam-roasted in the oven marinating in herbs')
 
-Order.create(dish: d1, restaurant: r1, cost: 6.45, rating: 5, order_count: 0)
-Order.create(dish: d2, restaurant: r1, cost: 5.95, rating: 4, order_count: 0)
-Order.create(dish: d1, restaurant: r2, cost: 8.50, rating: 3, order_count: 0)
-Order.create(dish: d2, restaurant: r2, cost: 7.75, rating: 5, order_count: 0)
-Order.create(dish: d4, restaurant: r3, cost: 12.99, rating: 1, order_count: 0)
-Order.create(dish: d3, restaurant: r3, cost: 9.99, rating: 2, order_count: 0)
-Order.create(dish: d4, restaurant: r4, cost: 12.95, rating: 4, order_count: 0)
-Order.create(dish: d3, restaurant: r4, cost: 10.95, rating: 5, order_count: 0)
-Order.create(dish: d5, restaurant: r5, cost: 14.99, rating: 5, order_count: 0)
-Order.create(dish: d3, restaurant: r5, cost: 9.99, rating: 2, order_count: 0)
+Order.create(dish: d1, restaurant: r1, cost: 6.45, rating: 5)
+Order.create(dish: d2, restaurant: r1, cost: 5.95, rating: 4)
+Order.create(dish: d1, restaurant: r2, cost: 8.50, rating: 3)
+Order.create(dish: d2, restaurant: r2, cost: 7.75, rating: 5)
+Order.create(dish: d4, restaurant: r3, cost: 12.99, rating: 1)
+Order.create(dish: d3, restaurant: r3, cost: 9.99, rating: 2)
+Order.create(dish: d4, restaurant: r4, cost: 12.95, rating: 4)
+Order.create(dish: d3, restaurant: r4, cost: 10.95, rating: 5)
+Order.create(dish: d5, restaurant: r5, cost: 14.99, rating: 5)
+Order.create(dish: d3, restaurant: r5, cost: 9.99, rating: 2)
 
 puts "seeded with #{Restaurant.all.count} restaurants, #{Dish.all.count} dishes, and #{Order.all.count} orders."

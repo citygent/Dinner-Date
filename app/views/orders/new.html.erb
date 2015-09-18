@@ -1,0 +1,19 @@
+<%= form_for @order do |form| %>
+
+  <%= form.collection_select(:restaurant_id, Restaurant.all, :id, :name) %>
+  <p>Link to add restaurant</p>
+  <%= form.collection_select(:dish_id, Dish.all, :id, :name) %>
+  <p>Link to add dish</p>
+
+  <%= form.label :cost %>
+  <%= form.text_field :cost %>
+
+  <%= form.radio_button :rating, '1' %>
+  <%= form.radio_button :rating, '2' %>
+  <%= form.radio_button :rating, '3', checked: true %>
+  <%= form.radio_button :rating, '4' %>
+  <%= form.radio_button :rating, '5' %>
+
+  <%= form.submit 'Add' %>
+
+<% end %>
