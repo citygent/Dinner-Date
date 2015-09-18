@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   def create
     order = Order.new(order_params)
     if order.save
-      redirect_to order.dish
+      redirect_to order #eventually this will redirect to order.dish
     else
       render :new
     end

@@ -1,1 +1,7 @@
-<h1><%= @order.dish.name %> at <%= @order.restaurant.name %> </h1>
+<h1><%= link_to(@order.dish.name, @order.dish) %> at <%= @order.restaurant.name %> </h1>
+<p><%= @order.dish.description %></p>
+<h2>Price: <%= number_to_currency(@order.cost, unit: "£") %></h2>
+<h2>Rating: <%= @order.rating%>/5</h2>
+<h2>Eaten: <%= @order.order_count%> times</h2>
+
+

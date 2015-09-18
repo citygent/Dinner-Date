@@ -1,5 +1,5 @@
 <h1>Your Recently Ordered Meals</h1>
-
+<h2><%= link_to 'Eating again?', new_order_path %></h2>
 <ul>
 <% @orders.each do |order| %>
   <li><%= order.dish.name %> at <%= order.restaurant.name %></li>
