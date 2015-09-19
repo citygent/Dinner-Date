@@ -1,4 +1,4 @@
-<h1><%= @restaurant.name %></h1>
+<h1><%= link_to(@restaurant.name, restaurants_path) %></h1>
 <p><%= @restaurant.description %></p>
 
 <h2>Average Rating: <%= average_rating(@restaurant) %>/5</h2>

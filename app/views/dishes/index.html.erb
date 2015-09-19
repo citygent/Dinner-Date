@@ -2,6 +2,6 @@
 <h2><%= link_to 'Eating again?', new_order_path %></h2>
 <ul>
 <% @dishes.each do |dish| %>
-  <li><%= dish.cuisine %>: <%= dish.name %></li>
+  <li><%= link_to(dish.name, dish) %></li>
 <% end %>
 </ul>

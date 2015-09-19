@@ -1,4 +1,4 @@
-<h1><%= link_to(@order.dish.name, @order.dish) %> at <%= @order.restaurant.name %> </h1>
+<h1><%= link_to(@order.dish.name, @order.dish) %> at <%= link_to(@order.restaurant.name, @order.restaurant) %> </h1>
 <p><%= @order.dish.description %></p>
 <h2>Price: <%= number_to_currency(@order.cost, unit: "£") %></h2>
 <h2>Rating: <%= @order.rating%>/5</h2>
