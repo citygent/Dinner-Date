@@ -1,11 +1,13 @@
 <h1><%= @dish.name %></h1>
 <p><%= @dish.description %></p>
+
 <h2>Average Price: <%= number_to_currency(average_price(@dish), unit: "£") %></h2>
+
 <h2>Rating: <%= average_rating(@dish)%>/5</h2>
 <h2>Eaten: <%= @dish.orders.map(&:order_count).inject(:+) %> times</h2>
 <h2>Last eaten at...</h2>
 <ul>
 <% @dish.orders.each do |order| %>
-  <li><%= order.restaurant.name %> on <%= link_to(order.created_at, order) %> </li>
+  <li><%= link_to(order.restaurant.name, order.restaurant) %> on <%= link_to(order.created_at, order) %> </li>
   <% end %>
 </ul>

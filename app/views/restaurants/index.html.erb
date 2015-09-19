@@ -1,0 +1,7 @@
+<h1>Places eaten</h1>
+<h2><%= link_to 'Eating again?', new_order_path %></h2>
+<ul>
+<% @restaurants.each do |restaurant| %>
+  <li><%= restaurant.name %>, <%= restaurant.city %></li>
+<% end %>
+</ul>
