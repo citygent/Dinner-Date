@@ -9,6 +9,11 @@ class OrdersController < ApplicationController
   end
 
   def create
+    if order_params[:file].present?
+      preloaded = Cloudinary::PreloadedFile.new(order_params[:file])
+      puts "invalid upload sig" if !preloaded.valid?
+      @order.photo = preloaded.identifier
+    end
     order = Order.new(order_params)
     if order.save
       redirect_to order #eventually this will redirect to order.dish
@@ -23,7 +28,7 @@ class OrdersController < ApplicationController
 
 private 
   def order_params
-    params.require(:order).permit(:restaurant_id, :dish_id, :cost, :rating)
+    params.require(:order).permit(:restaurant_id, :dish_id, :cost, :rating, :photo)
   end
 
 
