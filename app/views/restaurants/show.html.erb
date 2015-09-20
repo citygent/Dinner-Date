@@ -1,4 +1,5 @@
 <h1><%= link_to(@restaurant.name, restaurants_path) %></h1>
+<%= cl_image_tag(@restaurant.picture, :width => 400, :height => 400, :crop=>:fill) %>
 <p><%= @restaurant.description %></p>
 
 <h2>Average Rating: <%= average_rating(@restaurant) %>/5</h2>
