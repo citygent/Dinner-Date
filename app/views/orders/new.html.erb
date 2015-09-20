@@ -1,22 +1,51 @@
 <%= form_for @order do |form| %>
 
+  <p>Pick Restaurant</p>
   <%= form.collection_select(:restaurant_id, Restaurant.all, :id, :name) %>
-  <p>Link to add restaurant</p>
+  
+  <p>Pick Dish</p>
   <%= form.collection_select(:dish_id, Dish.all, :id, :name) %>
-  <p>Link to add dish</p>
 
   <%= form.label :cost %>
   <%= form.text_field :cost %>
-
+  <br>
   <%= form.radio_button :rating, '1' %>
   <%= form.radio_button :rating, '2' %>
   <%= form.radio_button :rating, '3', checked: true %>
   <%= form.radio_button :rating, '4' %>
   <%= form.radio_button :rating, '5' %>
-
+  <br>
+  <p>Meal Photo</p>
   <%= form.hidden_field(:photo_cache) %>
   <%= form.file_field(:photo) %>
+  <br>
+  <%= form.submit 'Add' %>
 
+<% end %>
+
+<%= form_for @restaurant do |form| %>
+  <p>Add Restaurant</p>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+<br>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+<br>
+  <%= form.label 'Street, Area' %>
+  <%= form.text_field :address %>
+
+  <%= form.label :city %>
+  <%= form.text_field :city %>
+<br>
+  <%= form.label 'Website URL' %>
+  <%= form.text_field :website %>
+<br>
+  <%= form.label 'Phone Number' %>
+  <%= form.text_field :phone %>
+<br>
+  <%= form.hidden_field(:picture_cache) %>
+  <%= form.file_field(:picture) %>
+<br>
   <%= form.submit 'Add' %>
 
 <% end %>
