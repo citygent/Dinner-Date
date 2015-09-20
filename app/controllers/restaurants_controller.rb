@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
     if restaurant.save
       redirect_to new_order_path
     else
-      render :new
+      redirect_to new_order_path
     end
   end  
 
