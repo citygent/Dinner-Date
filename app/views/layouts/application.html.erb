@@ -8,6 +8,13 @@
   <%= cloudinary_js_config %>
 </head>
 <body>
+<nav>
+  <ul>
+    <%= nav_link 'Meals', orders_path %>
+    <%= nav_link 'Restaurants', restaurants_path %>
+    <%= nav_link 'Dishes', dishes_path %>
+  </ul>
+</nav>
 
 <%= yield %>
 <%= cl_image_tag("klxn5m7axnwerggfhhug.png")%> 
