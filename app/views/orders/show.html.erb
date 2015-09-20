@@ -3,5 +3,6 @@
 <h2>Price: <%= number_to_currency(@order.cost, unit: "£") %></h2>
 <h2>Rating: <%= @order.rating%>/5</h2>
 <h2>Eaten: <%= @order.order_count%> times</h2>
+<%= image_tag(@order.photo_url, :width => 400, :heigh => 400) %>
 
 

@@ -14,7 +14,8 @@
   <%= form.radio_button :rating, '4' %>
   <%= form.radio_button :rating, '5' %>
 
-  <%= cl_image_upload_tag(:photo) %>
+  <%= form.hidden_field(:photo_cache) %>
+  <%= form.file_field(:photo) %>
 
   <%= form.submit 'Add' %>
 

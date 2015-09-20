@@ -32,7 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use Cloudinary dfor images?
+# Use Cloudinary for image manipulation, CarrierWave for ActiveRecord model entity assignment. 
+# CarrierWave gem must load first.
+gem 'carrierwave'
 gem 'cloudinary'
 
 group :development, :test do
