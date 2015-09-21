@@ -1,27 +1,35 @@
   <h2>Add Meal Eaten</h2>
 <%= form_for @order do |form| %>
-  <p>Pick Restaurant</p>
-  <%= form.collection_select(:restaurant_id, Restaurant.all, :id, :name) %>
-  
-  <p>Pick Dish</p>
-  <%= form.collection_select(:dish_id, Dish.all, :id, :name) %>
+  <h3>Pick Restaurant</h3>
+  <%= form.collection_select(:restaurant_id, @restaurants.order(created_at: :desc), :id, :name) %>
+  <a href="#" data-reveal-id="RestaurantForm"><p>Restaurant not here?</p></a>
+
+  <h3>Pick Dish</h3>
+  <%= form.collection_select(:dish_id, @dishes.order(created_at: :desc), :id, :name) %>
+  <a href="#" data-reveal-id="DishForm"><p>Dish not here?</p></a>
 
   <%= form.label :cost %>
   <%= form.text_field :cost %>
   <br>
+
+  <div>  
+  <%= form.label :rating %>
   <%= form.radio_button :rating, '1' %>
   <%= form.radio_button :rating, '2' %>
   <%= form.radio_button :rating, '3', checked: true %>
   <%= form.radio_button :rating, '4' %>
   <%= form.radio_button :rating, '5' %>
+  </div>
+
   <br>
-  <p>Meal Photo</p>
+<%= form.label 'Meal Photo' %>
   <%= form.hidden_field(:photo_cache) %>
   <%= form.file_field(:photo) %>
   <br>
   <%= form.submit 'Add Meal' %>
 <% end %>
 
+<div id="DishForm" class="reveal-modal" data-reveal aria-hidden="true" role="form">
   <h2>Add Dish</h2>
 <%= form_for @dish do |form| %>
   <%= form.label :name %>
@@ -35,9 +43,11 @@
 <br>
   <%= form.submit 'Add Dish' %>
 <% end %>
+<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
 
-
-  <h2>Add Restaurant</h2>
+<div id="RestaurantForm" class="reveal-modal" data-reveal aria-labelledby="AddRestaurant" aria-hidden="true" role="form">
+  <h2 id="AddRestaurant"> Add Restaurant</h2>
 <%= form_for @restaurant do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
@@ -56,9 +66,12 @@
 <br>
   <%= form.label 'Phone Number' %>
   <%= form.text_field :phone %>
-<br>
+
+<%= form.label 'Restaurant Photo' %>  
   <%= form.hidden_field(:picture_cache) %>
   <%= form.file_field(:picture) %>
 <br>
   <%= form.submit 'Add Restaurant' %>
 <% end %>
+<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>

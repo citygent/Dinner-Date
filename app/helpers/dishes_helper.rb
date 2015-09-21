@@ -6,4 +6,9 @@ module DishesHelper
   def average_rating(dish) #or restaurant
     dish.orders.map(&:rating).inject(:+) / dish.orders.size
   end
+
+  def random_pic(dish)
+    dish.orders.order("RANDOM()").first.photo
+  end
+  
 end

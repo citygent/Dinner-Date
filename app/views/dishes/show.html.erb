@@ -1,6 +1,8 @@
 <h1><%= link_to(@dish.name, dishes_path) %></h1>
 <p><%= @dish.description %></p>
 
+<%= cl_image_tag(random_pic(@dish), :width => 500, :height => 500, :crop=>:fill) %>
+
 <h2>Average Price: <%= number_to_currency(average_price(@dish), unit: "£") %></h2>
 
 <h2>Rating: <%= average_rating(@dish)%>/5</h2>

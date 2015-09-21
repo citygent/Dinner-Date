@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
     @restaurants = Restaurant.all
     @restaurant = Restaurant.new #needed for Add restaurant form.
     @dish = Dish.new #needed for Add Dish form.
+    @dishes = Dish.all
   end
 
   def create
