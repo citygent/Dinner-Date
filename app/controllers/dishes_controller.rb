@@ -4,6 +4,10 @@ class DishesController < ApplicationController
     @dishes = Dish.all
   end
 
+  def new
+    @dish = Dish.new
+  end
+
   def create
     dish = Dish.new(dish_params)
     if dish.save

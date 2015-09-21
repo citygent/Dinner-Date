@@ -2,7 +2,7 @@
 <%= form_for @order do |form| %>
   <h3>Pick Restaurant</h3>
   <%= form.collection_select(:restaurant_id, @restaurants.order(created_at: :desc), :id, :name) %>
-  <a href="#" data-reveal-id="RestaurantForm"><p>Restaurant not here?</p></a>
+  <%= link_to 'Restaurant not here?', new_restaurant_path, remote: true %>
 
   <h3>Pick Dish</h3>
   <%= form.collection_select(:dish_id, @dishes.order(created_at: :desc), :id, :name) %>
@@ -29,7 +29,7 @@
   <%= form.submit 'Add Meal' %>
 <% end %>
 
-<div id="DishForm" class="reveal-modal" data-reveal aria-hidden="true" role="form">
+<div id="dish-form" style="display:none;">
   <h2>Add Dish</h2>
 <%= form_for @dish do |form| %>
   <%= form.label :name %>
@@ -43,35 +43,7 @@
 <br>
   <%= form.submit 'Add Dish' %>
 <% end %>
-<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
-<div id="RestaurantForm" class="reveal-modal" data-reveal aria-labelledby="AddRestaurant" aria-hidden="true" role="form">
-  <h2 id="AddRestaurant"> Add Restaurant</h2>
-<%= form_for @restaurant do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-<br>
-  <%= form.label :description %>
-  <%= form.text_field :description %>
-<br>
-  <%= form.label 'Street, Area' %>
-  <%= form.text_field :address %>
-
-  <%= form.label :city %>
-  <%= form.text_field :city %>
-<br>
-  <%= form.label 'Website URL' %>
-  <%= form.text_field :website %>
-<br>
-  <%= form.label 'Phone Number' %>
-  <%= form.text_field :phone %>
-
-<%= form.label 'Restaurant Photo' %>  
-  <%= form.hidden_field(:picture_cache) %>
-  <%= form.file_field(:picture) %>
-<br>
-  <%= form.submit 'Add Restaurant' %>
-<% end %>
-<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+<div id="restaurant-form" style="display:none;">
 </div>

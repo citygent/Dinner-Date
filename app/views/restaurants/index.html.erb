@@ -2,6 +2,6 @@
 <h2><%= link_to 'Eating again?', new_order_path %></h2>
 <ul>
 <% @restaurants.each do |restaurant| %>
-  <li><%= link_to(restaurant.name, restaurant) %>, <%= restaurant.address %> on <%= link_to(restaurant.orders.last.created_at, restaurant.orders.last) %></li>
+  <li><%= link_to(restaurant.name, restaurant) %>, <%= restaurant.address %> on <%= link_to('restaurant.orders.last.created_at', 'restaurant.orders.last') %></li>
 <% end %>
 </ul>
