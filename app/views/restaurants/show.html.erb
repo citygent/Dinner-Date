@@ -1,15 +1,16 @@
-<h1><%= link_to(@restaurant.name, restaurants_path) %></h1>
-<%= cl_image_tag(@restaurant.picture, :width => 500, :height => 500, :crop=>:fill) %>
-<p><%= @restaurant.description %></p>
+<h2 class="pageTitle restaurantTitle"><%= link_to(@restaurant.name, restaurants_path) %>, <%= @restaurant.address %>, <%= @restaurant.city %></h2>
 
-<h2>Average Rating: <%= 'average_rating(@restaurant)' %>/5</h2>
+<%= cl_image_tag(@restaurant.picture, :width => 500, :height => 500, :crop=>:fill, :class => 'show-pic') %>
+<p class='show-desc'><%= @restaurant.description %></p>
+
+<h2>Average Rating: <%= average_rating(@restaurant) %>/5</h2>
 
 
-<h2>Eaten here: <%= '@restaurant.orders.map(&:order_count).inject(:+)' %> times</h2>
+<h2>Eaten here: <%= @restaurant.orders.map(&:order_count).inject(:+) %> times</h2>
 
 <ul>
 <% @restaurant.orders.each do |order| %>
-  <li><%= link_to(order.dish.name, order.dish) %> on <%= link_to(order.created_at, order) %> </li>
+  <li><%= link_to(order.dish.name, order.dish, :class => "show-restaurant-name") %> on <%= link_to(order.created_at.strftime("%A " "#{order.created_at.day.ordinalize}" " %B, %Y"), order, :class => "order-date") %> </li>
   <% end %>
 </ul>
 
