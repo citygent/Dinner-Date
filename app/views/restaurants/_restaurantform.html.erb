@@ -1,5 +1,5 @@
     <h2> Add Restaurant</h2>
-<%= form_for(@restaurant, remote: true, multipart: true) do |form| %>
+<%= form_for(@restaurant) do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
 <br>

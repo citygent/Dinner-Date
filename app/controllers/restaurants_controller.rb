@@ -14,7 +14,7 @@ class RestaurantsController < ApplicationController
     respond_to do |format|
       if @restaurant.save
         format.html { redirect_to @restaurant, notice: 'Upload was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @restaurant }
+        format.json { render json: @restaurant }
         format.js { @restaurants = Restaurant.all }
       else
         redirect_to new_order_path
