@@ -10,7 +10,7 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
 
 header {
-  margin-top: 6%;
+  margin-top: 50px;
   text-align: center;
 }
 nav {
@@ -100,11 +100,16 @@ ul, li {
 }
 .order-pic {
   float: left;
+  display: block;
+  margin: 0 auto; border: solid 2px white;
+  -moz-box-shadow: 1px 1px 5px #999; 
+  -webkit-box-shadow: 1px 1px 5px #999; 
+  box-shadow: 1px 1px 5px #999;
 }
 .li-text-wrapper > * { /* the wildcard followed by > applies it to child elements */
   display: block;
   text-decoration: none;
-  margin-left: 140px;
+  margin-left: 150px;
 }
 a {
   color: rgba(64, 64, 64, 1);
@@ -154,6 +159,7 @@ img.show-pic {
   color: rgb(165,42,42);
 }
 .show-desc {
+  display: block;
   margin-top: 35px;
 }
 .restaurantTitle a {
@@ -164,14 +170,12 @@ img.show-pic {
   font-family: AGaramondPro-Italic, serif;
   color: rgb(165,42,42);
 }
-.pageTitle{
-  float: left;
+.dishTitle{
+  /*float: left;*/
 }
 .show-rh-fig {
   float: right;
   display: inline-block;
   text-align: right;
-}
-.show-container {
-  clear:both;
+  margin-top: -53px; /*super cheat */
 }

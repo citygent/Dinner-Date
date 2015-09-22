@@ -1,7 +1,10 @@
-<h1><%= link_to(@dish.name, dishes_path) %></h1>
-<p><%= @dish.description %></p>
+<div class='show-container'>
+<h2 class="pageTitle dishTitle"><%= link_to(@dish.name, dishes_path) %></h2>
+</div>
 
-<%= cl_image_tag(random_pic(@dish), :width => 500, :height => 500, :crop=>:fill) %>
+<p class='show-desc'><%= @dish.description %></p>
+
+<%= cl_image_tag(random_pic(@dish), :width => 500, :height => 500, :crop=>:fill, :class => 'show-pic') %>
 
 <h2>Average Price: <%= number_to_currency(average_price(@dish), unit: "£") %></h2>
 
@@ -10,6 +13,6 @@
 <h2>Last eaten at...</h2>
 <ul>
 <% @dish.orders.each do |order| %>
-  <li><%= link_to(order.restaurant.name, order.restaurant) %> on <%= link_to(order.created_at, order) %> </li>
+  <li><%= link_to(order.restaurant.name, order.restaurant, :class => "show-restaurant-name") %> on <%= link_to(order.created_at.strftime("%A " "#{order.created_at.day.ordinalize}" " %B, %Y"), order, :class => "order-date") %> </li>
   <% end %>
 </ul>
