@@ -76,6 +76,7 @@ body {
   background-color: rgba(255, 248, 235, .2);
   background-image: url('45-degree-fabric-light.png');
   font-weight: normal;
+  margin-bottom: 150px;
 }
 h2 {
   font-weight: normal;
@@ -178,4 +179,8 @@ img.show-pic {
   display: inline-block;
   text-align: right;
   margin-top: -53px; /*super cheat */
+}
+h2.formTitle {
+  font-family: AGaramondPro-Italic, serif;
+  color: rgb(165,42,42);
 }

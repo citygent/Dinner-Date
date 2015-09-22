@@ -17,10 +17,11 @@
 <br>
   <%= form.label 'Phone Number' %>
   <%= form.text_field :phone %>
-
+<br>
 <%= form.label 'Restaurant Photo' %>  
   <%= form.hidden_field(:picture_cache) %>
   <%= form.file_field(:picture) %>
+<br>
 <br>
  <%= form.submit %>
 <% end %>
