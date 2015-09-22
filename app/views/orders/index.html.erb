@@ -2,6 +2,6 @@
 <h2><%= link_to 'Eating again?', new_order_path %></h2>
 <ul>
 <% @orders.each do |order| %>
-  <li><%= link_to(order.dish.name, order.dish)  %> at <%= link_to(order.restaurant.name, order.restaurant) %> on <%= link_to(order.created_at, order) %></li>
+  <li><%= link_to(order.dish.name, order.dish)  %> at <%= link_to(order.restaurant.name, order.restaurant) %> on <%= link_to(order.created_at.strftime("%A " "#{order.created_at.day.ordinalize}" " %B, %Y"), order) %></li>
 <% end %>
 </ul>

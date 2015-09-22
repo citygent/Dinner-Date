@@ -3,10 +3,14 @@
   <h3>Pick Restaurant</h3>
   <%= form.collection_select(:restaurant_id, @restaurants.order(created_at: :desc), :id, :name) %>
   <%= link_to 'Restaurant not here?', new_restaurant_path, remote: true %>
+  <div id="restaurant-form" style="display:none;">
+</div>
 
   <h3>Pick Dish</h3>
   <%= form.collection_select(:dish_id, @dishes.order(created_at: :desc), :id, :name) %>
   <%= link_to 'Dish not here?', new_dish_path, remote: true %>
+  <div id="dish-form" style="display:none;">
+</div>
 
   <%= form.label :cost %>
   <%= form.text_field :cost %>
@@ -29,8 +33,5 @@
   <%= form.submit 'Add Meal' %>
 <% end %>
 
-<div id="dish-form" style="display:none;">
-</div>
 
-<div id="restaurant-form" style="display:none;">
-</div>
+

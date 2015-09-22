@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>EatDifferentApp</title>
+  <title>EatDifferent</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'dataturbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,11 +10,19 @@
 <body>
 <nav>
   <ul>
-     <%= nav_link 'Restaurants', restaurants_path %>
+    <%= nav_link 'Restaurants', restaurants_path %>
     <%= nav_link 'Dishes', dishes_path %>
+    <%= nav_link 'Meals History', orders_path %>
   </ul>
+</nav>
+<header>
+  <h1 class="siteTitle">Dinner Date</h1>
+  <%= link_to (new_order_path) do %><div id="platter"></div>
+  <% end %>
+</header>
+<main>
 
     <%= yield %>
-
+</main>
   </body>
 </html>
