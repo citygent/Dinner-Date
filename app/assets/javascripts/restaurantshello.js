@@ -2,8 +2,8 @@ $(function(){
   $('body').on('submit', '#new_restaurant', addRestaurant);
 })
 
-function addRestaurant(e){
-  e.preventDefault();
+function addRestaurant(){
+  event.preventDefault(); // NEEDS TO BE EVENT. Passing through e for some reason redirects. 
 
   var formData = new FormData();
   formData.append('restaurant[picture]', $('#restaurant_picture')[0].files[0]);
