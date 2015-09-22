@@ -6,7 +6,7 @@
 
   <h3>Pick Dish</h3>
   <%= form.collection_select(:dish_id, @dishes.order(created_at: :desc), :id, :name) %>
-  <a href="#" data-reveal-id="DishForm"><p>Dish not here?</p></a>
+  <%= link_to 'Dish not here?', new_dish_path, remote: true %>
 
   <%= form.label :cost %>
   <%= form.text_field :cost %>
@@ -30,19 +30,6 @@
 <% end %>
 
 <div id="dish-form" style="display:none;">
-  <h2>Add Dish</h2>
-<%= form_for @dish do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-<br>
-  <%= form.label 'Cuisine' %>
-  <%= form.text_field :cuisine %>
-<br>
-  <%= form.label :description %>
-  <%= form.text_field :description %>
-<br>
-  <%= form.submit 'Add Dish' %>
-<% end %>
 </div>
 
 <div id="restaurant-form" style="display:none;">

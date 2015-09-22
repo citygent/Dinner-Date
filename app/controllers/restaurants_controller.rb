@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
     respond_to do |format|
       if @restaurant.save
-        format.html { redirect_to @restaurant, notice: 'Upload was successfully created.' }
+        # format.html { redirect_to @restaurant, notice: 'Upload was successfully created.' }
         format.json { render json: @restaurant }
         format.js { @restaurants = Restaurant.all }
       else

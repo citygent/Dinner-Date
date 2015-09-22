@@ -1,0 +1,31 @@
+$('#dish-form').html("<%= escape_javascript (render 'dishform') %>");
+$('#dish-form').slideDown(350);
+
+$(function(){
+  $('body').on('submit', '#new_dish', addDish);
+})
+
+function addDish(e){
+  e.preventDefault(); 
+
+  var formData = new FormData();
+  formData.append('dish[name]', $('#dish_name').val());
+  formData.append('dish[cuisine]', $('#dish_cuisine').val());
+  formData.append('dish[description]', $('#dish_description').val());
+
+  $.ajax({
+    url: "/dishes.json",
+    data: formData,
+    contentType: false,
+    processData: false,
+    type: 'POST'
+  }).done(function(dish){
+    if (!dish) return false;
+    addToOptions(dish);
+  });
+}
+
+function addToOptions(dish) {
+  $('#order_dish_id').prepend("<option selected='selected' value="+ dish.id +">"+dish.name +"</option>");
+  $('#dish-form').slideUp(3550);
+}
