@@ -1,9 +1,9 @@
-<h1><%= link_to(@order.dish.name, @order.dish) %> at <%= link_to(@order.restaurant.name, @order.restaurant) %> </h1>
+<div class='show-container'><h2 class="pageTitle"><span class="dishTitle"><%= link_to(@order.dish.name, @order.dish) %></span> at <span class="restaurantTitle"><%= link_to(@order.restaurant.name, @order.restaurant) %></span> </h2>
+<h2 class='show-rh-fig'>Price: <%= number_to_currency(@order.cost, unit: "£") %></h2></div>
 
-<%= cl_image_tag(@order.photo, :width => 500, :height => 500, :crop=>:fill) %>
+<%= cl_image_tag(@order.photo, :width => 500, :height => 500, :crop=>:fill, :class => 'show-pic') %>
 
-<p><%= @order.dish.description %></p>
-<h2>Price: <%= number_to_currency(@order.cost, unit: "£") %></h2>
+<p class='show-desc'><%= @order.dish.description %></p>
 
 <h2>Rating: <%= @order.rating%>/5</h2>
 <h2>Eaten: <%= @order.order_count%> times</h2>

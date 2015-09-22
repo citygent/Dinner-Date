@@ -157,5 +157,21 @@ img.show-pic {
   margin-top: 35px;
 }
 .restaurantTitle a {
-  color: rgb(165,42,42);  
+  font-family: AGaramondPro-Regular, serif;
+  color: rgb(47,79,79);  
+}
+.dishTitle a {
+  font-family: AGaramondPro-Italic, serif;
+  color: rgb(165,42,42);
+}
+.pageTitle{
+  float: left;
+}
+.show-rh-fig {
+  float: right;
+  display: inline-block;
+  text-align: right;
+}
+.show-container {
+  clear:both;
 }
