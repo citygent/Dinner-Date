@@ -2,10 +2,10 @@
 <%= cl_image_tag(@restaurant.picture, :width => 500, :height => 500, :crop=>:fill) %>
 <p><%= @restaurant.description %></p>
 
-<h2>Average Rating: <%= average_rating(@restaurant) %>/5</h2>
+<h2>Average Rating: <%= 'average_rating(@restaurant)' %>/5</h2>
 
 
-<h2>Eaten here: <%= @restaurant.orders.map(&:order_count).inject(:+) %> times</h2>
+<h2>Eaten here: <%= '@restaurant.orders.map(&:order_count).inject(:+)' %> times</h2>
 
 <ul>
 <% @restaurant.orders.each do |order| %>
@@ -13,7 +13,3 @@
   <% end %>
 </ul>
 
-<div class="row">
-  <div class="small-2 columns">2 columns</div>
-  <div class="small-10 columns">10 columns</div>
-</div>

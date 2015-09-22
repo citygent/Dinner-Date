@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  respond_to :html, :js
+  # respond_to :html, :js
 
   def index
     @restaurants = Restaurant.all
@@ -13,9 +13,9 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
     respond_to do |format|
       if @restaurant.save
-        format.json { render :show, status: :created, location: @restaurant }
-        format.js 
-        format.html 
+        format.html { redirect_to @restaurant, notice: 'Upload was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @restaurant }
+        format.js { @restaurants = Restaurant.all }
       else
         redirect_to new_order_path
       end
@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
 
 private 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :description, :address, :city, :website, :phone, :picture)
+    params.require(:restaurant).permit(:name, :description, :address, :city, :website, :phone, :picture_cache, :picture)
   end
 
 

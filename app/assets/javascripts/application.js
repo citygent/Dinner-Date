@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require cloudinary
+//= require jquery.remotipart 
 //= require_tree .
