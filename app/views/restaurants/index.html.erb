@@ -1,7 +1,14 @@
-<h1>Places eaten</h1>
-<h2><%= link_to 'Eating again?', new_order_path %></h2>
+<h2>Places eaten</h2>
 <ul>
 <% @restaurants.each do |restaurant| %>
-  <li><%= link_to(restaurant.name, restaurant) %>, <%= restaurant.address %> on <%= link_to('restaurant.orders.last.created_at', 'restaurant.orders.last') %></li>
+  <li class='list-item'>
+  <%= cl_image_tag(restaurant.picture, :width => 125, :height => 125, :class => "order-pic") %>
+  <div class='li-text-wrapper'>
+  <%= link_to(restaurant.orders.last.created_at.strftime("%A " "#{restaurant.orders.last.created_at.day.ordinalize}" " %B, %Y"), restaurant.orders.last, :class => "order-date") %>
+<%= link_to(restaurant.address, restaurant, :class => "order-restaurant-name") %>
+
+  <%= link_to(restaurant.name, restaurant, :class => "order-dish-name") %>
+  </div>
+  </li>
 <% end %>
 </ul>

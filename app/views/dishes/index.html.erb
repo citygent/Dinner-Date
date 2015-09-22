@@ -1,7 +1,11 @@
-<h1>What's been on the menu?</h1>
-<h2><%= link_to 'Eating again?', new_order_path %></h2>
+<h2>What's been on the menu?</h2>
 <ul>
 <% @dishes.each do |dish| %>
-  <li><%= link_to(dish.name, dish) %></li>
+  <li class='list-item'>
+  <%= cl_image_tag(dish.orders.last.photo, :width => 125, :height => 125, :class => "order-pic") %>
+  <div class='li-text-wrapper'>
+  <%= link_to(dish.name, dish, :class => "order-dish-name") %>
+  </div>
+  </li>
 <% end %>
 </ul>
