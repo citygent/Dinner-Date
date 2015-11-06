@@ -15,7 +15,7 @@ class RestaurantsController < ApplicationController
       if @restaurant.save
         # format.html { redirect_to @restaurant, notice: 'Upload was successfully created.' }
         format.json { render json: @restaurant }
-        format.js { @restaurants = Restaurant.all }
+        # format.js { @restaurants = Restaurant.all }
       else
         redirect_to new_order_path
       end

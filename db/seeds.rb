@@ -27,15 +27,15 @@ d4 = Dish.create(name: 'Peperoni Pizza', cuisine: 'Italian', description: 'Tomat
 
 d5 = Dish.create(name: 'Whole rainbow trout, fennel, cucumber & dill', cuisine: 'British', description: 'Whole Trout steam-roasted in the oven marinating in herbs')
 
-Order.create(dish: d1, restaurant: r1, cost: 6.45, rating: 5, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757316/11856784_392045634328145_1374549228_n_ldn9rn.jpg")
-Order.create(dish: d2, restaurant: r1, cost: 5.95, rating: 4, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757306/11311282_503973076419644_1930616595_n_yyhaud.jpg")
-Order.create(dish: d1, restaurant: r2, cost: 8.50, rating: 3, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757316/11856591_496526427184189_800482050_n_qifqls.jpg")
-Order.create(dish: d2, restaurant: r2, cost: 7.75, rating: 5, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757306/11917863_715691555202363_874058534_n_vvt9bm.jpg")
-Order.create(dish: d4, restaurant: r3, cost: 12.99, rating: 1, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442758555/11909130_669927666476966_1423936728_n_nfgxob.jpg")
-Order.create(dish: d3, restaurant: r3, cost: 9.99, rating: 2, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757307/11176094_698166736950320_1823060131_n_vuak3t.jpg")
-Order.create(dish: d4, restaurant: r4, cost: 12.95, rating: 4, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442758556/11918045_690801444387106_226203936_n_eyhodk.jpg")
-Order.create(dish: d3, restaurant: r4, cost: 10.95, rating: 5, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757308/10611232_720931491385097_410956166_n_mngz7s.jpg")
-Order.create(dish: d5, restaurant: r5, cost: 14.99, rating: 5, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757311/927871_257057944469244_1212132451_n_epe1vs.jpg")
-Order.create(dish: d3, restaurant: r5, cost: 9.99, rating: 2, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757306/11875540_929939473751897_1572391811_n_cx69in.jpg")
+Order.create(dish: d1, restaurant: r1, cost: 6.45, rating: 5, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757316/11856784_392045634328145_1374549228_n_ldn9rn.jpg", order_count: 5)
+Order.create(dish: d2, restaurant: r1, cost: 5.95, rating: 4, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757306/11311282_503973076419644_1930616595_n_yyhaud.jpg", order_count: 2)
+Order.create(dish: d1, restaurant: r2, cost: 8.50, rating: 3, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757316/11856591_496526427184189_800482050_n_qifqls.jpg", order_count: 3)
+Order.create(dish: d2, restaurant: r2, cost: 7.75, rating: 5, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757306/11917863_715691555202363_874058534_n_vvt9bm.jpg", order_count: 4)
+Order.create(dish: d4, restaurant: r3, cost: 12.99, rating: 1, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442758555/11909130_669927666476966_1423936728_n_nfgxob.jpg", order_count: 6)
+Order.create(dish: d3, restaurant: r3, cost: 9.99, rating: 2, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757307/11176094_698166736950320_1823060131_n_vuak3t.jpg", order_count: 2)
+Order.create(dish: d4, restaurant: r4, cost: 12.95, rating: 4, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442758556/11918045_690801444387106_226203936_n_eyhodk.jpg", order_count: 1)
+Order.create(dish: d3, restaurant: r4, cost: 10.95, rating: 5, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757308/10611232_720931491385097_410956166_n_mngz7s.jpg", order_count: 4)
+Order.create(dish: d5, restaurant: r5, cost: 14.99, rating: 5, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757311/927871_257057944469244_1212132451_n_epe1vs.jpg", order_count: 4)
+Order.create(dish: d3, restaurant: r5, cost: 9.99, rating: 2, remote_photo_url: "http://res.cloudinary.com/citygent/image/upload/v1442757306/11875540_929939473751897_1572391811_n_cx69in.jpg", order_count: 1)
 
 puts "seeded with #{Restaurant.all.count} restaurants, #{Dish.all.count} dishes, and #{Order.all.count} orders."
