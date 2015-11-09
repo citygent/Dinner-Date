@@ -40,5 +40,11 @@ CSS does not use a framework as I wanted to learn from ground up and project sco
 
 The CSS mentioned was styled in a rush for presentation, so certain pages reuse tags from others. This is not semantic and has the potential to get messy. It should be addressed before new features are added. 
 
-There is some issue with the form data posting at the moment and this has been a major headache before deadline. Rails doesn't like dynamic forms! 
+~~There is some issue with the form data posting at the moment and this has been a major headache before deadline. ~~ Fixed using 'accepts_nested_attributes_for'
+
+If a user doesn't upload a (restaurant or meal) image, there is no placeholder image for this circumstance. Also should be noted that because of this it will change the behaviour of the 'random dish image' feature. 
+
+The form doesn't have validation, this is problematic because of 0 or nil in the average dish price and average reviews on the show pages. I need to either put in validation for super sterile db additions, or I need to change those average functions to work with nil values. IDEALLY, BOTH. 
+
+
 
