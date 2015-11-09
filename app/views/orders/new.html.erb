@@ -5,7 +5,8 @@
     <div id="new_restaurant_remote_link">Restaurant not here?</div>
   <br>
   <div id="restaurant_form_container" style="display:none;">
-    <%= form.fields_for(:restaurant, style: "display:none;") do |form_restaurant| %>
+    <h2>Add Restaurant</h2>
+    <%= form.fields_for(:restaurant) do |form_restaurant| %>
         <%= form_restaurant.label :name %>
         <%= form_restaurant.text_field :name %>
       <br>
@@ -30,14 +31,28 @@
     <% end %>
   </div>
   <%#= link_to 'Restaurant not here?', new_restaurant_path, remote: true, id: "new_restaurant_remote_link" %>
-  <div id="restaurant-form" style="display:none;">
-</div>
+<!--   <div id="restaurant-form" style="display:none;">
+  </div> -->
 
   <h2 class="formTitle">Pick Dish</h2>
-  <%= form.collection_select(:dish_id, @dishes.order(created_at: :desc), :id, :name) %>
-  <%= link_to 'Dish not here?', new_dish_path, remote: true %>
-  <div id="dish-form" style="display:none;">
-</div>
+  <%= form.collection_select(:dish_id, @dishes.order(created_at: :desc), :id, :name, include_blank: true) %>
+  <div id="new_dish_remote_link">Dish not here?</div>
+  <div id="dish_form_container" style="display:none;">
+    <h2>Add Dish</h2>
+    <%= form.fields_for(:dish) do |form_dish| %>
+      <%= form_dish.label :name %>
+      <%= form_dish.text_field :name %>
+    <br>
+      <%= form_dish.label 'Cuisine' %>
+      <%= form_dish.text_field :cuisine %>
+    <br>
+      <%= form_dish.label :description %>
+      <%= form_dish.text_field :description %>
+    <% end %>
+  </div>
+<%#= link_to 'Dish not here?', new_dish_path, remote: true %>
+<!--  <div id="dish-form" style="display:none;">
+  </div> -->
   <br>
   <br>
   <h2 class="formTitle">How was it?</h2>
@@ -60,7 +75,7 @@
   <%= form.file_field(:photo) %>
   <br>
   <br>
-  <%= form.submit 'Add Meal' %>
+  <%= form.submit 'Add Dining Experience' %>
 <% end %>
 
 
