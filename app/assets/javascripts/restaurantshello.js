@@ -1,15 +1,17 @@
 $(function(){
   $("#new_restaurant_remote_link").on("click", function(){
     // when user clicks on link , we need to select the blank option for the dropdown
-    $("#restaurant_form_container").show()
+    $("#restaurant_form_container").toggle('slow')
     $('#order_restaurant_id option[value=""]').attr("selected", "selected");
-    $('#order_restaurant_id').hide()
+    $('#order_restaurant_id').css('visibility', function(i, visibility) {
+        return (visibility == 'visible') ? 'hidden' : 'visible';
+    })
   })
   // $('body').on('submit', '#new_restaurant', addRestaurant);
 })
 
 function addRestaurant(e){
-  e.preventDefault(); // NEEDS TO BE EVENT. Passing through e for some reason redirects. 
+  e.preventDefault(); 
 
   var formData = new FormData();
   formData.append('restaurant[picture]', $('#restaurant_picture')[0].files[0]);
