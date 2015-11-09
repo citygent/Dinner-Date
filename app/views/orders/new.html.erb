@@ -1,8 +1,35 @@
   <h2>Had something nice?</h2>
 <%= form_for @order do |form| %>
   <h2 class="formTitle">Pick Restaurant</h2>
-  <%= form.collection_select(:restaurant_id, @restaurants.order(created_at: :desc), :id, :name) %>
-  <%= link_to 'Restaurant not here?', new_restaurant_path, remote: true %>
+  <%= form.collection_select(:restaurant_id, @restaurants.order(created_at: :desc), :id, :name, include_blank: true) %>
+    <div id="new_restaurant_remote_link">Restaurant not here?</div>
+  <br>
+  <div id="restaurant_form_container" style="display:none;">
+    <%= form.fields_for(:restaurant, style: "display:none;") do |form_restaurant| %>
+        <%= form_restaurant.label :name %>
+        <%= form_restaurant.text_field :name %>
+      <br>
+        <%= form_restaurant.label :description %>
+        <%= form_restaurant.text_field :description %>
+      <br>
+        <%= form_restaurant.label 'Street, Area' %>
+        <%= form_restaurant.text_field :address %>
+      <br>
+        <%= form_restaurant.label :city %>
+        <%= form_restaurant.text_field :city %>
+      <br>
+        <%= form_restaurant.label 'Website URL' %>
+        <%= form_restaurant.text_field :website %>
+      <br>
+        <%= form_restaurant.label 'Phone Number' %>
+        <%= form_restaurant.text_field :phone %>
+      <br>
+        <%= form_restaurant.label 'Restaurant Photo' %>  
+        <%= form_restaurant.hidden_field(:picture_cache) %>
+        <%= form_restaurant.file_field(:picture) %>
+    <% end %>
+  </div>
+  <%#= link_to 'Restaurant not here?', new_restaurant_path, remote: true, id: "new_restaurant_remote_link" %>
   <div id="restaurant-form" style="display:none;">
 </div>
 

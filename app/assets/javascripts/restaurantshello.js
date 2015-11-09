@@ -1,5 +1,11 @@
 $(function(){
-  $('body').on('submit', '#new_restaurant', addRestaurant);
+  $("#new_restaurant_remote_link").on("click", function(){
+    // when user clicks on link , we need to select the blank option for the dropdown
+    $("#restaurant_form_container").show()
+    $('#order_restaurant_id option[value=""]').attr("selected", "selected");
+    $('#order_restaurant_id').hide()
+  })
+  // $('body').on('submit', '#new_restaurant', addRestaurant);
 })
 
 function addRestaurant(e){
