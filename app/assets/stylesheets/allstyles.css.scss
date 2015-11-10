@@ -65,17 +65,17 @@ h1.siteTitle {
   display: inline-block;
   width: 150px; 
   height: 150px;
-  background: url(image-path('closedish.png')) center top no-repeat;
+  background: url('<%= asset_path("closedish.png") %> ') center top no-repeat;
   background-size: contain;
   position: relative;
 }
 #platter:hover {
-  background-image: url(image-path('dishopen.png'));
+  background-image: image-url('dishopen.png');
 }
 body {
   font-family: AGaramondPro-Regular, serif;
   background-color: rgba(255, 248, 235, .2);
-  background-image: url(image-path('45-degree-fabric-light.png'));
+  background-image: image-url('45-degree-fabric-light.png');
   font-weight: normal;
   margin-bottom: 150px;
 }
