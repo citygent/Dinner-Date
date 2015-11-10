@@ -184,3 +184,10 @@ h2.formTitle {
   font-family: AGaramondPro-Italic, serif;
   color: rgb(165,42,42);
 }
+
+.field_with_errors {
+  padding: 10px;
+  background-color: rgba(200, 0, 0, .5);
+  display: table;
+  border-radius: 5px;
+}

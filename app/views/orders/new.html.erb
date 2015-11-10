@@ -1,7 +1,21 @@
   <h2>Had something nice?</h2>
+
+<% if @order.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@order.errors.count, "error") %> stopped us from being able to log your meal:</h2>
+ 
+    <ul>
+    <% @order.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <%= form_for @order do |form| %>
   <h2 class="formTitle">Pick Restaurant</h2>
-  <%= form.collection_select(:restaurant_id, @restaurants.order(created_at: :desc), :id, :name, include_blank: true) %>
+  <%= form.collection_select(:restaurant_id, @restaurants, :id, :name, include_blank: true) %>
     <div id="new_restaurant_remote_link">Restaurant not here?</div>
   <br>
   <div id="restaurant_form_container" style="display:none;">
