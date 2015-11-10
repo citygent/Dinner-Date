@@ -1,11 +1,12 @@
 @font-face { 
   font-family: AGaramondPro-Regular; 
-  src:font-url('AGaramondPro-Regular.otf') format("opentype");
+  src:font-url(asset-path('AGaramondPro-Regular.otf')) format("opentype");
 }
 @font-face { 
   font-family: AGaramondPro-Italic; 
-  src:font-url('AGaramondPro-Italic.otf') format("opentype");
+  src:font-url(asset-path('AGaramondPro-Italic.otf')) format("opentype");
 }
+
 
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
 
@@ -64,17 +65,17 @@ h1.siteTitle {
   display: inline-block;
   width: 150px; 
   height: 150px;
-  background: url('closedish.png') center top no-repeat;
+  background: url(image-path('closedish.png')) center top no-repeat;
   background-size: contain;
   position: relative;
 }
 #platter:hover {
-  background-image: url('dishopen.png');
+  background-image: url(image-path('dishopen.png'));
 }
 body {
   font-family: AGaramondPro-Regular, serif;
   background-color: rgba(255, 248, 235, .2);
-  background-image: url('45-degree-fabric-light.png');
+  background-image: url(image-path('45-degree-fabric-light.png'));
   font-weight: normal;
   margin-bottom: 150px;
 }
