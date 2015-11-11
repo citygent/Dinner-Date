@@ -65,7 +65,7 @@ h1.siteTitle {
   display: inline-block;
   width: 150px; 
   height: 150px;
-  background-image: image-url('closedish.png') center top no-repeat;
+  background-image: url(image-path('closedish.png')) center top no-repeat;
   background-size: contain;
   position: relative;
 }
